@@ -1,0 +1,137 @@
+/**
+*Layout
+*/
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: PT sans;
+  margin: 0;
+  padding: 0;
+}
+.container {
+  width: 100%;
+  margin: 0px auto;
+}
+.layout-2-col .column{
+  width: 49%;
+  display: inline-block;
+}
+.layout-3-col .column{
+  width: 31%;
+  display: inline-block;
+}
+.layout-4-col .column{
+  display: inline-block;
+}
+.left {
+  float: left;
+}
+.right {
+  float: right;
+}
+/**
+*Header & Footer
+*/
+header {
+  height: 30px;
+  color: white;
+  background-color: black;
+  text-transform: uppercase;
+  font-size: 65%;
+  padding-left: 5%;
+}
+.site-header ul, li, a{
+  list-style-image: none;
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  padding-left: 10px;
+}
+.site-header .layout-2-col .column:last-child{
+  text-align: right;
+  padding-right: 5%;
+}
+/**
+*Main
+*/
+.color {
+  color: #36ebe0;
+}
+
+/**
+*Description
+*/
+p, h1{
+  display: inline-block;
+}
+.switch {
+  width: 10%;
+  height: 400px;
+  text-align: center;
+}
+.description{
+background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+height: 400px;
+}
+.box-left {
+  width: 40%;
+  background-image: url(../images/black_chair.png);
+  background-position: center;
+  height: 400px;
+}
+.box-right {
+  text-align: center;
+  width: 40%;
+  height: 400px;
+  position: absolute;
+  top: 30px;
+  padding-top: 70px;
+}
+.box-right>h1{
+  text-transform: uppercase;
+}
+.description .left>button, .description .right>button{
+  height: 100px;
+  font-size: 40px;
+  border: none;
+  background: transparent;
+  margin-top: 150px;
+}
+.box-right>button{
+  height: 40px;
+  width: 170px;
+  color: white;
+  background-color:#36ebe0;
+  border: none;
+  text-transform: uppercase;
+  font-size: 13px;
+  border-radius: 4px;
+}
+
+/**
+*Gallery
+*/
+.gallery .layout-3-col {
+  border: 1px solid red;
+  padding: 20px;
+  padding-bottom: 40px;
+}
+.gallery .layout-3-col .column {
+  border: 1px solid black;
+  height: 220px;
+  margin-left: 20px;
+}
+.gallery_1 {
+  background-image: url(../images/box1_img.jpg);
+  background-position: center;
+}
+.gallery_2 {
+  background-image: url(../images/box2_img.jpg);
+  background-position: center;
+}
+.gallery_3 {
+  height: 300px;
+}
