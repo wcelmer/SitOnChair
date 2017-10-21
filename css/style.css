@@ -2,6 +2,7 @@
 *Layout
 */
 
+
 * {
   box-sizing: border-box;
 }
@@ -25,11 +26,11 @@ body {
 }
 .layout-2-col .column{
   width: 49%;
-  display: inline-block;
+  float: left;
 }
 .layout-3-col .column{
   width: 31%;
-  display: inline-block;
+  float: left;
 }
 .layout-4-col .column{
   display: inline-block;
@@ -48,8 +49,9 @@ header {
   color: white;
   background-color: black;
   text-transform: uppercase;
-  font-size: 65%;
+  font-size: 11px;
   padding-left: 5%;
+  padding-top: 10px;
 }
 .site-header ul, li, a{
   list-style-image: none;
@@ -57,6 +59,8 @@ header {
   text-decoration: none;
   color: white;
   padding-left: 10px;
+  max-height: 10px;
+  margin: 0;
 }
 .site-header .layout-2-col .column:last-child{
   text-align: right;
@@ -66,7 +70,7 @@ header {
 *Main
 */
 .color {
-  color: rgb(68,234,183);
+  color: #66CDAA;
 }
 
 /**
@@ -101,6 +105,7 @@ height: 400px;
   padding-top: 70px;
   padding-right: 15px;
   padding-left: 15px;
+  margin-top: 40px;
   color: rgb(208,208,208);
 }
 .box-right>h1{
@@ -119,7 +124,7 @@ height: 400px;
   height: 40px;
   width: 170px;
   color: white;
-  background-color:rgb(68,234,183);
+  background-color:#66CDAA;
   border: none;
   text-transform: uppercase;
   font-size: 13px;
@@ -153,8 +158,6 @@ height: 400px;
   color: rgb(208,208,208);
   line-height: 19px;
   font-size: 11px;
-  position: relative;
-  top: 20px;
 }
 .gallery .blur {
   padding-bottom: 10px;
@@ -172,16 +175,16 @@ height: 400px;
 .gallery .column h1{
   font-size: 14px;
   color: black;
-  border-bottom: 4px solid rgb(68,234,183);
+  border-bottom: 4px solid #66CDAA;
   width: 50%;
 }
 /**
 *Price
 */
 .price {
-  background-color: rgba(208,208,208,0.3);
+  background-color: rgb(239,239,239);
   padding: 20px;
-  height: 650px;
+  height: 615px;
 }
 .price .clear_fix:after {
         content:'';
@@ -190,14 +193,19 @@ height: 400px;
       }
 .price .column {
   height: 400px;
-  border: 1px solid red;
+  border: 1px solid grey;
   margin-left: 18px;
   margin-bottom: 20px;
-  top: 40px;
+  color: #66CDAA;
+  position: relative;
+  background-color: rgb(215,215,215)
+  border-radius: 4px;
+
+
 }
 .price .width_fix>h1 {
   width: 31%;
-  border-bottom: 4px solid rgb(68,234,183);
+  border-bottom: 4px solid #66CDAA;
   margin-left: 18px;
   text-transform: uppercase;
   font-size: 18px;
@@ -206,7 +214,8 @@ height: 400px;
   height: 60px;
   width: 60px;
   border-radius: 40px;
-  border: 1px solid red;
+  border: 2px solid rgba(208,208,208,0.9);
+  background-color: white;
   text-align: center;
   margin-left: 41%;
   margin-top: -14%;
@@ -215,18 +224,29 @@ height: 400px;
   height: 30px;
   width: 30px;
   border-radius: 15px;
-  border: 1px solid green;
-  margin-left: 14px;
-  margin-top: 14px;
+  border: 2px solid rgba(208,208,208,0.9);
+  background-color: rgba(208,208,208,0.5);
+  margin-left: 13px;
+  margin-top: 13px;
 }
 .price .round_big {
   height:120px;
   width: 120px;
   margin-left: 31%;
-  border: 1px solid red;
+  border: 2px solid rgba(208,208,208,0.5);
   border-radius: 60px;
   margin-top: 20px;
   margin-bottom: 20px;
+  text-align: center;
+  padding-top: 24px;
+  background-color: white;
+  color: grey;
+}
+.round_big .font_big{
+  font-size: 34px;
+}
+.round_big .font_small{
+  font-size: 12px;
 }
 .price .column>h1 {
   text-transform: uppercase;
@@ -238,66 +258,168 @@ height: 400px;
   width: 100%;
   height: 30px;
   text-align: center;
-  padding-top: 5px;
+  padding-top: 7px;
   font-size: 14px;
+  color: grey;
 }
 .price .cell:nth-child(2n){
-  background-color: grey;
+  background-color: rgba(208,208,208,0.4);
 }
 .price .cell:nth-child(2n+1){
-  background-color: brown;
+  background-color: #CCCCCC;
+}
+.price .diffrent {
+  background-color: #66CDAA;
+  color: white;
+  border: 1px solid #66CDAA;
+}
+.diffrent .round_small{
+  background-color: white;
+  border: 2px solid white;
+}
+.diffrent .cell:nth-child(2n){
+  background-color: white;
+}
+.diffrent .cell:nth-child(2n+1){
+  background-color: #CCCCCC;
+}
+.diffrent button {
+  background-color: white;
+  color: rgb(68,234,183);
 }
 .price button {
   width: 90px;
-  height: 25px;
+  height: 26px;
   text-align: center;
   text-transform: uppercase;
-  border-radius: 4px;
-  position: relative;
-  top: 10px;
+  border-radius: 6px;
+  display: block;
   margin-left: 36%;
+  color: white;
+  background-color: #66CDAA;
+  font-size: 12px;
+  border: none;
+  position: absolute;
+  bottom: 10px;
+}
+.diffrent button {
+  background-color: white;
+  color: #66CDAA;
 }
 .price .width_fix {
   width: 100%;
   margin-bottom: 100px;
-  border: 1px solid green;
 }
 /**
 *Form
 */
+.form {
+  height: 370px;
+}
 .form .container>h1 {
   width: 31%;
-  border-bottom: 4px solid rgb(68,234,183);
+  border-bottom: 4px solid #66CDAA;
   margin-left: 18px;
   text-transform: uppercase;
   font-size: 18px;
 }
+.form input{
+  width: 100%;
+  height: 40px;
+  border: 1px solid #66CDAA;
+  color: #DDDDDD;
+  font-weight: 100;
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+.form .label {
+  padding-left: 20px;
+}
+.form textarea {
+  width: 100%;
+  height: 155px;
+  border: 1px solid #66CDAA;
+  color: #DDDDDD;
+  font-weight: 100;
+  font-size: 20px;
+}
+.form .column {
+  padding: 25px;
+  height: 320px;
+}
+.form .big {
+  width: 66%;
+}
+.form .small {
+  width: 33%;
+  text-align: center;
+  font-size: 14px;
+  color: #DDDDDD;
+  display: inline-block;
+}
+.form img {
+  width: 200px;
+  height: 160px;
+}
+.form button{
+  color: white;
+  background-color: #66CDAA;
+  width: 160px ;
+  height: 35px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  border: none;
+  font-size: 14px;
+}
+.form .small input {
+  width: 30px;
+  height: 30px;
+}
+.form .flex {
+  display: flex;
+}
+input[type=checkbox]:before {
+  content:"";
+  display:inline-block;
+  width:42px;
+  height:42px;
+  background:white;
+  border: 2px solid #DDDDDD;
+}
+input[type=checkbox]:checked:before {
+  background-image: url(../images/form_ok.jpg);
+  background-position: center;
+}​
+
 
 /**
 *Site-Footer
 */
 .site-footer {
-  padding: 10px;
   color: grey;
   height: 60px;
   font-size: 12px;
+  margin-top: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 12px;
 }
 .site-footer .big {
   width: 64%;
-  padding-left: 20px;
   letter-spacing: 2px;
-  margin-bottom: 10px;
+  padding-left: 20px;
 }
 .site-footer .small {
   width: 31%;
   overflow: hidden;
   height: 35px;
+  float: right;
+  padding-right: 20px;
 }
 .column .images {
   width: 49%;
   display: inline-block;
   height: 40px;
-  text-align: center;
 }
 .column .last {
   width: 49%;
