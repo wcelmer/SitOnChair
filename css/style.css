@@ -21,7 +21,7 @@ body {
 
 }
 .container {
-  width: 100%;
+  width: 1000px;
   margin: 0px auto;
 }
 .layout-2-col .column{
@@ -66,6 +66,43 @@ header {
   text-align: right;
   padding-right: 5%;
 }
+/*
+.hidden {
+  visibility: hidden;
+}
+.nav-list-hiden {
+  position: relative;
+}
+*/
+.nav-list-sub {
+  width: 110px;
+  height: 90px;
+  background-color: #000000;
+  padding: 6px;
+  text-align: left;
+  position: absolute;
+  top: 40px;
+  left: 800px;
+}
+.triangle {
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 12px solid #000000;
+  position: absolute;
+  left: 42px;
+  top: -11px;
+}
+.nav-list-sub a {
+  color: #ffffff;
+  font-size: 11px;
+  display: block;
+  padding-top: 20px;
+}
+.nav-list-sub a:hover {
+  font-weight: 700;
+}
 /**
 *Main
 */
@@ -80,12 +117,12 @@ p, h1{
   display: inline-block;
 }
 .switch {
-  width: 10%;
+  width: 50px;
   height: 400px;
   text-align: center;
 }
 .description{
-background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(217,217,217,1) 100%);
 height: 400px;
 }
 .box-left {
@@ -111,6 +148,7 @@ height: 400px;
 .box-right>h1{
   text-transform: uppercase;
   color: black;
+  font-size: 30px;
 }
 .description .left>button, .description .right>button{
   height: 100px;
@@ -122,13 +160,15 @@ height: 400px;
 }
 .box-right>button{
   height: 40px;
-  width: 170px;
+  width: 180px;
   color: white;
   background-color:#66CDAA;
   border: none;
   text-transform: uppercase;
-  font-size: 13px;
+  font-size: 15px;
+  font-weight: 100;
   border-radius: 4px;
+  padding-top: 5px;
 }
 
 /**
@@ -158,6 +198,7 @@ height: 400px;
   color: rgb(208,208,208);
   line-height: 19px;
   font-size: 11px;
+  padding-right: 4px;
 }
 .gallery .blur {
   padding-bottom: 10px;
@@ -182,26 +223,19 @@ height: 400px;
 *Price
 */
 .price {
-  background-color: rgb(239,239,239);
+  background-color: rgba(239,239,239,0.4);
   padding: 20px;
   height: 615px;
 }
-.price .clear_fix:after {
-        content:'';
-        display:block;
-        clear:both;
-      }
 .price .column {
   height: 400px;
-  border: 1px solid grey;
+  border: 2px solid rgb(220,220,220);
   margin-left: 18px;
   margin-bottom: 20px;
   color: #66CDAA;
   position: relative;
-  background-color: rgb(215,215,215)
+  background-color: rgba(239,239,239,0.2);
   border-radius: 4px;
-
-
 }
 .price .width_fix>h1 {
   width: 31%;
@@ -224,10 +258,9 @@ height: 400px;
   height: 30px;
   width: 30px;
   border-radius: 15px;
-  border: 2px solid rgba(208,208,208,0.9);
-  background-color: rgba(208,208,208,0.5);
+  background-color: rgb(180,180,180);
   margin-left: 13px;
-  margin-top: 13px;
+  margin-top: 12px;
 }
 .price .round_big {
   height:120px;
@@ -240,7 +273,8 @@ height: 400px;
   text-align: center;
   padding-top: 24px;
   background-color: white;
-  color: grey;
+  color: rgb(200,200,200);
+  font-weight: 700;
 }
 .round_big .font_big{
   font-size: 34px;
@@ -251,7 +285,7 @@ height: 400px;
 .price .column>h1 {
   text-transform: uppercase;
   text-align: center;
-  font-size: 15px;
+  font-size: 18px;
   width: 100%;
 }
 .price .cell {
@@ -276,6 +310,10 @@ height: 400px;
 .diffrent .round_small{
   background-color: white;
   border: 2px solid white;
+}
+.diffrent .round_big {
+  border: none;
+  font-weight: 700;
 }
 .diffrent .cell:nth-child(2n){
   background-color: white;
@@ -341,7 +379,9 @@ height: 400px;
   border: 1px solid #66CDAA;
   color: #DDDDDD;
   font-weight: 100;
-  font-size: 20px;
+  font-size: 26px;
+  padding-left: 8px;
+  padding-top: 10px;
 }
 .form .column {
   padding: 25px;
@@ -349,6 +389,11 @@ height: 400px;
 }
 .form .big {
   width: 66%;
+}
+.form .big input {
+  font-size: 26px;
+  padding-left: 8px;
+  font-weight: 100;
 }
 .form .small {
   width: 33%;
@@ -364,16 +409,19 @@ height: 400px;
 .form button{
   color: white;
   background-color: #66CDAA;
-  width: 160px ;
-  height: 35px;
+  width: 270px ;
+  height: 48px;
+  margin-top: 20px;
   border-radius: 5px;
   text-transform: uppercase;
   border: none;
   font-size: 14px;
 }
 .form .small input {
-  width: 30px;
-  height: 30px;
+  width: 20px;
+  height: 20px;
+  border: none;
+  margin-right: 15px;
 }
 .form .flex {
   display: flex;
@@ -396,7 +444,6 @@ input[type=checkbox]:checked:before {
 *Site-Footer
 */
 .site-footer {
-  color: grey;
   height: 60px;
   font-size: 12px;
   margin-top: 20px;
@@ -408,28 +455,28 @@ input[type=checkbox]:checked:before {
   width: 64%;
   letter-spacing: 2px;
   padding-left: 20px;
+  color: grey;
 }
 .site-footer .small {
-  width: 31%;
-  overflow: hidden;
+  width: 33%;
   height: 35px;
-  float: right;
   padding-right: 20px;
 }
 .column .images {
-  width: 49%;
+  width: 60%;
   display: inline-block;
   height: 40px;
 }
 .column .last {
-  width: 49%;
+  width: 38%;
   display: inline-block;
   height: 40px;
   text-transform: uppercase;
   text-align: center;
-  padding-bottom: 5px;
+  padding-left: 10px;
+  color: grey;
 }
-.last .bold {
+.bold {
   font-weight: bold;
 }
 
