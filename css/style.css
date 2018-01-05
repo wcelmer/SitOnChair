@@ -66,23 +66,20 @@ header {
   text-align: right;
   padding-right: 5%;
 }
-/*
-.hidden {
-  visibility: hidden;
+.nav-list-hidden{
+
+
+  position: absolute;
+  top: 40px;
+  right: 27%;
+
 }
-.nav-list-hiden {
-  position: relative;
-}
-*/
 .nav-list-sub {
   width: 110px;
   height: 90px;
   background-color: #000000;
   padding: 6px;
   text-align: left;
-  position: absolute;
-  top: 40px;
-  left: 800px;
 }
 .triangle {
   width: 0;
@@ -90,9 +87,10 @@ header {
   border-left: 15px solid transparent;
   border-right: 15px solid transparent;
   border-bottom: 12px solid #000000;
-  position: absolute;
-  left: 42px;
-  top: -11px;
+  margin-top: -17px;
+  margin-left: 30px;
+
+
 }
 .nav-list-sub a {
   color: #ffffff;
@@ -126,7 +124,7 @@ background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,24
 height: 400px;
 }
 .box-left {
-  width: 40%;
+  width: 400px;
   background-image: url(../images/black_chair.png);
   background-position: center;
   height: 400px;
@@ -135,7 +133,7 @@ height: 400px;
   text-align: center;
   line-height: 20px;
   font-size: 13px;
-  width: 40%;
+  width: 400px;
   height: 400px;
   position: absolute;
   top: 30px;
