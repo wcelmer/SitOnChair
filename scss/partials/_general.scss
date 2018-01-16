@@ -1,0 +1,35 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: ralewayregular;
+  margin: 0;
+  padding: 0;
+}
+
+.color {
+  color: $main-color;
+}
+
+.container {
+  width: 1000px;
+  margin: 0px auto;
+}
+.layout-2-col .column{
+  width: 49%;
+  float: left;
+}
+.layout-3-col .column{
+  width: 31%;
+  float: left;
+}
+.layout-4-col .column{
+  display: inline-block;
+}
+.left {
+  float: left;
+}
+.right {
+  float: right;
+}

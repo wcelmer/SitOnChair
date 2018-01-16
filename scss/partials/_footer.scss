@@ -1,0 +1,39 @@
+/**
+*Site-Footer
+*/
+.site-footer {
+  height: 60px;
+  font-size: 12px;
+  margin-top: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 12px;
+}
+.site-footer .big {
+  width: 64%;
+  letter-spacing: 2px;
+  padding-left: 20px;
+  color: grey;
+}
+.site-footer .small {
+  width: 33%;
+  height: 35px;
+  padding-right: 20px;
+}
+.column .images {
+  width: 60%;
+  display: inline-block;
+  height: 40px;
+}
+.column .last {
+  width: 38%;
+  display: inline-block;
+  height: 40px;
+  text-transform: uppercase;
+  text-align: center;
+  padding-left: 10px;
+  color: grey;
+}
+.bold {
+  font-weight: bold;
+}

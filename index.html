@@ -4,6 +4,8 @@
   <meta charset="utf-8">
   <title>Sit on chair</title>
   <link rel="stylesheet" href="css/style.css">
+  <script src="js/javascript.js" type="text/javascript"></script>
+  <script src="js/jquery-3.2.1.min.js"></script>
 </head>
 <body>
   <header class="site-header">
@@ -12,13 +14,13 @@
         <div class="column">
           Sit <span class="color bold">on</span> chair
         </div>
-        <div class="column">
+        <div id="list" class="column">
           <ul>
-            <li><a href="#">O FIRMIE</a></li>
-            <li><a href="#">GALERIA</a></li>
-            <li><a href="#">KONTAKT</a></li>
+            <li><span class="shadow"><a href="#">O FIRMIE</a></span></li>
+            <li><span class="shadow"><a href="#">GALERIA</a></span></li>
+            <li><span class="shadow"><a href="#">KONTAKT</a></span></li>
           </ul>
-          <div class="nav-list-hidden">
+          <div id="nav-hide" class="nav-list-hidden">
             <div class="nav-list-sub hidden">
               <div class="triangle"></div>
               <a href="#">Aktualności</a>
@@ -34,9 +36,15 @@
     <div class="container">
       <div class="row layout-4-col">
         <div class="column switch left">
-          <button><span class="color"><</span></button>
+          <button id='left_switch'><span class="color"><</span></button>
         </div>
-        <div class="column box-left">
+        <div class="column box-left slider">
+          <ul class="slides">
+            <li class="slide slide1"></li>
+            <li class="slide slide2"></li>
+            <li class="slide slide3"></li>
+            <li class="slide slide1"></li>
+          </ul>
         </div>
         <div class="column box-right">
           <h1>Sit <span class="color">on</span> our <span class="color">chair</span></h1>
@@ -45,7 +53,7 @@
           <button class="color">Zobacz więcej</button>
         </div>
         <div class="column switch right">
-          <button><span class="color">></span></button>
+          <button id='right_switch'><span class="color">></span></button>
         </div>
     </div>
   </section>
@@ -53,7 +61,7 @@
     <div class="container">
       <div class="row layout-3-col floatfix">
         <div class="column gallery_1">
-          <div class="blur move_left">
+          <div class="blur move_left" >
             <h1>Chair CLAIR</h1>
           </div>
         </div>
