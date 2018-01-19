@@ -64,6 +64,9 @@ document.addEventListener('DOMContentLoaded', function(){
         if (currentSlide === $slides.length) {
           currentSlide = 1;
           $slideContainer.css('margin-left', 0);
+        } else if (currentSlide == 0) {
+          currentSlide = 1;
+          $slideContainer.css('margin-left', 0);
         }
       }
 
@@ -75,6 +78,9 @@ document.addEventListener('DOMContentLoaded', function(){
         if (currentSlide === -$slides.length+2) {
           currentSlide = 1;
           $slideContainer.css('margin-left', 0);
+        } else if (currentSlide == 0) {
+          currentSlide = 3;
+          $slideContainer.css('margin-left', -400);
         }
       }
 
