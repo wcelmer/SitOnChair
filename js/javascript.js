@@ -2,17 +2,19 @@ document.addEventListener('DOMContentLoaded', function(){
 
   //ukrywanie listy w navigacji
 
-  var hideList = document.getElementById('list');
-  hideList.addEventListener('mouseover', function(){
-    console.log('działa')
+  var $hidenList = $('#list-show');
+  var $hideElement = $('#nav-hide');
 
-    var hideElement = document.getElementById('nav-hide');
-    hideElement.style.display= "block";
+  function showNav() {
+    $hideElement.css('display', 'block');
+  }
+  function hideNav() {
+    $hideElement.css('display', 'none');
+  }
 
-    hideList.addEventListener('mouseleave', function(){
-    hideElement.style.display="none";
-    });
-  });
+  $hidenList
+    .on('mouseover', showNav)
+    .on('mouseleave', hideNav);
 
   $(function() {
 
@@ -79,15 +81,17 @@ document.addEventListener('DOMContentLoaded', function(){
 
     $button_right
       .on('click', moveForward)
-      .on('mouseover', pauseSlider);
+      .on('mouseover', pauseSlider)
+      .on('mouseleave', startSlider);
 
     $button_left
       .on('click', moveBack)
-      .on('mouseover', pauseSlider);
+      .on('mouseover', pauseSlider)
+      .on('mouseleave', startSlider);
 
     $slideContainer
-        .on('mouseenter', pauseSlider)
-        .on('mouseleave', startSlider);
+      .on('mouseenter', pauseSlider)
+      .on('mouseleave', startSlider);
 
     startSlider();
 

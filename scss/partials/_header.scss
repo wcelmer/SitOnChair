@@ -29,7 +29,11 @@ header {
     height: 90px;
     background-color: #000000;
     padding: 6px;
-    text-align: left;
+    a {
+      display: flex;
+      justify-content: center;
+      text-align: center;
+    }
   }
 
   .triangle {
@@ -47,7 +51,8 @@ header {
     color: #ffffff;
     font-size: 11px;
     display: block;
-    padding-top: 20px;
+    padding-top: 12px;
+    padding-right: 8px;
   }
 }
 .site-header ul, .site-header li, .site-header a {
