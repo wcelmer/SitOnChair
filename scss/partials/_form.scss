@@ -75,15 +75,17 @@
 .form .flex {
   display: flex;
 }
-input[type=checkbox]:before {
-  content:"";
-  display:inline-block;
-  width:42px;
-  height:42px;
-  background:white;
-  border: 2px solid #DDDDDD;
-}
-input[type=checkbox]:checked:before {
-  background-image: url(../images/form_ok.jpg);
-  background-position: center;
+.form {
+  input[type=checkbox]:before {
+    content:"";
+    display:inline-block;
+    width:42px;
+    height:42px;
+    background:white;
+    border: 2px solid #DDDDDD;
+  }
+  input[type=checkbox]:checked:before {
+    background-image: url(../images/form_ok.jpg);
+    background-position: center;
+  }
 }

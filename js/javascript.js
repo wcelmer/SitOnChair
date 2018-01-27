@@ -103,4 +103,87 @@ document.addEventListener('DOMContentLoaded', function(){
 
   });
 
+
+  // DROPDOWN
+
+  function dropdown() {
+
+    var button = $('.dropbtn');
+    var links_name = $('.links_name').find('a');
+    var links_color = $('.links_color').find('a');
+    var links_material = $('.links_material').find('a');
+    var checked = $('input');
+    var amount = $('.numbers div');
+
+    function showList(e) {
+      e.preventDefault();
+      $(this).parent().parent().next('div').toggle();
+    }
+
+    function addName(e) {
+      e.preventDefault();
+      var price = $(this).data('price');
+      var this_name = $(this).text();
+
+      $('.name_chair_choose').text(this_name);
+      $('.name_chair_numb').text(price);
+    }
+    function addColor(e) {
+      e.preventDefault();
+      var price = $(this).data('price');
+      var this_name = $(this).text();
+
+      $('.color_choose').text(this_name);
+      $('.color_numb').text(price);
+    }
+    function addMaterial(e) {
+      e.preventDefault();
+      var price = $(this).data('price');
+      var this_name = $(this).text();
+
+      $('.material_choose').text(this_name);
+      $('.material_numb').text(price);
+    }
+    function addTransport(e) {
+      e.preventDefault();
+
+      var price = $(this).data('price');
+      var this_name = $(this).data('text');
+
+      $('.transport_numb').text(price);
+      $('.transport_choose').text(this_name);
+    }
+    function finalPrice() {
+      var total = 0;
+      $('.numbers div').each(function() {
+        total += ($(this).text());
+      });
+      $('.final_price').text(total);
+    }
+
+
+    button
+      .on('click', showList);
+
+    links_name
+      .on('click', addName);
+
+    links_color
+      .on('click', addColor);
+
+    links_material
+      .on('click', addMaterial);
+
+    checked
+      .on('change', addTransport);
+
+    amount
+      .on('click', finalPrice)
+      .on('click', function() {
+        console.log('działa');
+      });
+
+  }
+  dropdown();
+
 });
