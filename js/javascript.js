@@ -40,16 +40,15 @@ document.addEventListener('DOMContentLoaded', function(){
     //slider auto function
 
     function startSlider() {
-        interval = setInterval(function() {
-            $slideContainer.animate({'margin-left': '-='+width}, animationSpeed, function() {
-
-                if (++currentSlide === $slides.length) {
-                    currentSlide = 1;
-                    $slideContainer.css('margin-left', 0);
-                }
-            });
+      interval = setInterval(function() {
+        $slideContainer.animate({'margin-left': '-='+width}, animationSpeed, function() {
+          if (++currentSlide === $slides.length) {
+            currentSlide = 1;
+              $slideContainer.css('margin-left', 0);
+            }
+          });
         }, pause);
-    }
+      }
 
     //silder pause
     function pauseSlider() {
@@ -108,12 +107,28 @@ document.addEventListener('DOMContentLoaded', function(){
 
   function dropdown() {
 
+    //ZMIENNE DO PODPIĘCIA EVENTÓW
+
     var button = $('.dropbtn');
     var links_name = $('.links_name').find('a');
     var links_color = $('.links_color').find('a');
     var links_material = $('.links_material').find('a');
     var checked = $('input');
-    var amount = $('.numbers div');
+    var addedElements = $('.name_chair div');
+
+    //ZMIENNE DO CACHOWANIA
+
+    var name_c = $('.name_chair_choose');
+    var name_n = $('.name_chair_numb');
+    var color_c = $('.color_choose');
+    var color_n = $('.color_numb');
+    var material_c = $('.material_choose');
+    var material_n = $('.material_numb');
+    var transport_checkbox = $('#transport_checkbox');
+    var transport_c = $('.transport_choose');
+    var transport_n = $('.transport_numb');
+    var picture = $('.picture');
+
 
     function showList(e) {
       e.preventDefault();
@@ -125,63 +140,108 @@ document.addEventListener('DOMContentLoaded', function(){
       var price = $(this).data('price');
       var this_name = $(this).text();
 
-      $('.name_chair_choose').text(this_name);
-      $('.name_chair_numb').text(price);
+      name_c.text(this_name);
+      name_n.html(price);
     }
     function addColor(e) {
       e.preventDefault();
       var price = $(this).data('price');
       var this_name = $(this).text();
 
-      $('.color_choose').text(this_name);
-      $('.color_numb').text(price);
+      color_c.text(this_name);
+      color_n.text(price);
     }
     function addMaterial(e) {
       e.preventDefault();
       var price = $(this).data('price');
       var this_name = $(this).text();
 
-      $('.material_choose').text(this_name);
-      $('.material_numb').text(price);
+      material_c.text(this_name);
+      material_n.text(price);
     }
+
     function addTransport(e) {
       e.preventDefault();
 
-      var price = $(this).data('price');
-      var this_name = $(this).data('text');
+      if (transport_checkbox.prop('checked') === true) {
+        var price = $(this).data('price');
+        var this_name = $(this).data('text');
 
-      $('.transport_numb').text(price);
-      $('.transport_choose').text(this_name);
+        transport_n.text(price);
+        transport_c.text(this_name);
+      }
+      if (transport_checkbox.prop('checked') === false) {
+        transport_n.empty();
+        transport_c.empty();
+      }
     }
+
     function finalPrice() {
-      var total = 0;
-      $('.numbers div').each(function() {
-        total += ($(this).text());
+      var val = 0;
+      var tmp;
+      $('.numbers label').each(function() {
+        if ($(this).text().length === 0) {
+          $(this).text('0');
+        }
+        tmp = parseInt($(this).text());
+        parseInt(val);
+        val += tmp;
       });
-      $('.final_price').text(total);
+      $('.final_price').text(val);
     }
 
+    function removeSet (){
+      $(this).empty();
+
+      if (name_c.text().length === 0) {
+        name_n.empty();
+      }
+      if (color_c.text().length === 0) {
+        color_n.empty();
+      }
+      if (material_c.text().length === 0) {
+        material_n.empty();
+      }
+      if (transport_c.text().length === 0) {
+        transport_n.empty();
+        transport_checkbox.prop('checked', false);
+      }
+    }
+    function changePicture() {
+      if ($(this).text()=='Chair Clair') {
+        picture.css("background-image", "url(../SitOnChair/images/red_chair.png)");
+      }
+      if ($(this).text()=='Chair Margarita') {
+        picture.css("background-image", "url(../SitOnChair/images/slider/chair_PNG6875.png)");
+      }
+      if (($(this).text()=='Chair Selena')) {
+        picture.css("background-image", "url(../SitOnChair/images/black_chair.png)");
+      }
+    }
 
     button
       .on('click', showList);
 
     links_name
-      .on('click', addName);
+      .on('click', addName)
+      .on('click', changePicture)
+      .on('click', finalPrice);
 
     links_color
-      .on('click', addColor);
+      .on('click', addColor)
+      .on('click', finalPrice);
 
     links_material
-      .on('click', addMaterial);
+      .on('click', addMaterial)
+      .on('click', finalPrice);
 
     checked
-      .on('change', addTransport);
+      .on('change', addTransport)
+      .on('change', finalPrice);
 
-    amount
-      .on('click', finalPrice)
-      .on('click', function() {
-        console.log('działa');
-      });
+    addedElements
+      .on('click', removeSet)
+      .on('click', finalPrice);
 
   }
   dropdown();
